@@ -1,0 +1,27 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.mamisoa.diagnomedic">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/doc"
+        android:label="DiagnoMedic"
+        android:theme="@style/AppTheme">
+
+        <!-- MainActivity devient l'activité principale -->
+        <activity android:name=".MainActivity"
+            android:label="Diagnomédic">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- ResultActivity est une activité normale, lancée avec des données -->
+        <activity android:name=".ResultActivity"
+            android:label="Résultat du diagnostic" />
+    </application>
+
+</manifest>

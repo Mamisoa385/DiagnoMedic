@@ -24,6 +24,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+        db.execSQL("PRAGMA foreign_keys=ON;");
 
         // Création de la table Symptomes
         db.execSQL("CREATE TABLE Symptomes (" +
@@ -31,107 +32,27 @@ public class DBHelper extends SQLiteOpenHelper {
                 "nom TEXT NOT NULL);");
 
         // Insertion des symptômes
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Fièvre');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Toux');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Maux de tête');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Fatigue');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Douleurs Musculaires');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Frissons');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Essoufflement');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Douleur Thoracique');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Nausées');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Vomissements');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Diarrhée');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Perte d'appétit');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Perte de poids');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Sueurs nocturnes');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Eruption cutanée');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Taches rouge');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Gonflements des ganglions');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Maux de gorge');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Nez bouché');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Eternuement');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Douleur abdominale');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Ballonement');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Constipation');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Brulure d'estomac');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Saignement de nez');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Vertiges');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Perte de l'équilibre');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Vision Flou');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Acouphènes');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Douleurs aux oreilles');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Raideur de la nuque');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Photophobie');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Trouble de la mémoire');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Troubles du sommeil');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Insomnie');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Somnolence exessive');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Tremblements');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Palpitations');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Transpirations exessive');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Frilosité');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Sensation de chaleur');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Peau sèche');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Chute de cheveux');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Ongle cassants');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Irritabilité');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Anxiété');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Dépression');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Hallucinations');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Crise d'épilepsie');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Confusion');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Sensation de brûlure urinaire');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Douleur pendant la miction');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Sang dans les urines');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Envies fréquent d'uriner');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Incontinence');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Douleur pelvienne');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Règle irréguliaire');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Absence de règle');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Saignements vaginaux anormaux');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Douleurs testiculaire');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Ejacuation douloureuse');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Bourdonnement de l'oreille');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Toux sèche');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Toux grasse');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Douleur articulaire');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Gonflement ariculaire');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Raideur articulaire');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Rougeur articulaire');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Fièvre persistante');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Ganglions enflés');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Rougeurs oculaire');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Sécheresse oculaire');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Larmoiement');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Vision double');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Tâche noires dans la vision');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Jaunisse');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Coloration foncée des urines');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Urines mousseuses');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Selles claires');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Selles sanglantes');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Selles noires');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Démangeaisons');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Peau jaunâtre');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Langue blanche');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Aphtes');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Mauvaise haleine');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Goût mettalique');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Troubles de la parole');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Difficultés à avalér');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Toux avec sang');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Douleur à l'épaule');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Douleur au dos');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Douleur au genou');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Engourdissement');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Fourmillements');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Difficultés à marcher');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Changements d'humeur');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Crises d'angoisse');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Trouble de l'attention');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Trouble du comportement');");
-        db.execSQL("INSERT INTO Symptomes (nom) VALUES ('Hyperacctivité');");
+        String[] symptomes = {
+                "Fièvre", "Toux", "Maux de tête", "Fatigue", "Douleurs musculaires",
+                "Éternuements", "Congestion nasale", "Nausées", "Vomissements", "Diarrhée",
+                "Douleurs abdominales", "Perte d’appétit", "Perte de poids", "Essoufflement",
+                "Douleurs thoraciques", "Palpitations", "Éruptions cutanées", "Démangeaisons",
+                "Transpiration nocturne", "Frissons", "Ganglions enflés", "Jaunisse",
+                "Vision floue", "Vertiges", "Engourdissements", "Tremblements", "Anxiété",
+                "Dépression", "Insomnie", "Somnolence excessive", "Douleurs articulaires",
+                "Raideur", "Gonflement articulaire", "Ulcères buccaux", "Sécheresse buccale",
+                "Troubles de la mémoire", "Perte d’équilibre", "Crampes musculaires",
+                "Goût métallique", "Saignements", "Tension artérielle élevée", "Tension basse",
+                "Fréquence urinaire accrue", "Brûlures urinaires", "Sang dans les urines",
+                "Changements d’humeur", "Hyperactivité", "Troubles de concentration",
+                "Hallucinations", "Convulsions", "Photophobie", "Sons étouffés", "Mal de gorge",
+                "Écoulement nasal", "Perte d’odorat", "Perte de goût", "Troubles digestifs",
+                "Règles irrégulières", "Douleurs menstruelles", "Bouffées de chaleur",
+                "Difficultés à avaler", "Douleurs lombaires", "Pression oculaire", "Taches noires dans la vision"
+        };
+        for (String symptome : symptomes) {
+            db.execSQL("INSERT INTO Symptomes (nom) VALUES (?);", new Object[]{symptome});
+        }
 
         // Création de la table Maladies
         db.execSQL("CREATE TABLE Maladies (" +
@@ -387,7 +308,10 @@ public class DBHelper extends SQLiteOpenHelper {
                 "posologie TEXT," +
                 "duree_jours INTEGER," +
                 "FOREIGN KEY (traitement_id) REFERENCES traitement(id)");
+
+
     }
+
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
